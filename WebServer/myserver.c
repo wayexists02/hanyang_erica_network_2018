@@ -42,6 +42,7 @@ int main(int argc, char* argv[])
 	// if program terminated, CleanExit will be called.
     signal(SIGINT, CleanExit);
     signal(SIGTERM, CleanExit);
+	signal(SIGCHLD, SIG_IGN);
 
 	// open server.
     OpenServer(atoi(argv[1]));
